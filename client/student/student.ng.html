@@ -1,0 +1,28 @@
+<div class = "student container text-center">
+  <h2>Missed Days</h2>
+  <hr/>
+  <div class="row well well-lg">
+    <span class = "col-sm-4" ng-class="{'text-success' : attendancePercent < 101, 'text-warning' : attendancePercent < 90, 'text-danger' : attendancePercent < 75}">
+      <h2>
+        {{attendancePercent}}%
+      </h2>
+    </span>
+    <span class = "col-sm-8" d3-bars bar-height="20" bar-padding="5" graph-data="attendanceGraph"></span>
+  </div>
+  <hr/>
+  <h2>Days Read</h2>
+  <hr/>
+  <div class="well well-lg">
+    <h2>{{daysRead}}</h2>
+  </div>
+  <!-- <hr/>
+    <div>
+      <div d3-bars bar-height="20" bar-padding="5"></div>
+    </div> -->
+  <hr/>
+  <h2>Mastery</h2>
+  <hr/>
+  <div class="well well-lg">
+    <h2>{{mastered}}</h2>
+  </div>
+</div>

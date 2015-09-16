@@ -1,0 +1,12 @@
+<div>
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+
+<div class="container animate-show check-element what-to-do" ng-hide="signIn || signUp">
+  <a href="/sign-in" class="btn btn-primary form-control" ng-click="signIn = true">Sign In</a>
+  <br/>
+  <a href="/sign-up" class="btn btn-success form-control" ng-click="signUp = true">Sign Up</a>
+  <br/>
+  <a href="/register" class="btn btn-success form-control" ng-click="signUp = true">Register</a>
+  <br/>
+</div>

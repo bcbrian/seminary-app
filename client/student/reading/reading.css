@@ -1,0 +1,38 @@
+
+  .full button  {
+    background-color: limegreen;
+    border-radius: 3px;
+    color: black;
+  }
+  .partially button  {
+    background-color: orange;
+    border-radius: 3px;
+    color: black;
+  }
+
+  .absent button  {
+    background-color: red;
+    border-radius: 3px;
+    color: black;
+  }
+
+  .reading .btn-sm{
+    padding: 5px 10px;
+    font-size: 21px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
+  .reading .row{
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .reading .btn-lg{
+    padding: 10px 0px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    width: 49%;
+}

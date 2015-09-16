@@ -1,0 +1,10 @@
+<div class = "reading container text-center">
+  <h2>Reading</h2>
+  <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
+    <datepicker ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+  </div>
+  <div class="row">
+    <a href="" class="btn btn-lg btn-success" ng-click="markAttendance('full')">I Read</a>
+    <a href="" class="btn btn-lg btn-danger" ng-click="markAttendance('absent')">Missed Reading</a>
+  </div>
+</div>

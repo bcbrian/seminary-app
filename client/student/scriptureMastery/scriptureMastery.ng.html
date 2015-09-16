@@ -1,0 +1,833 @@
+<div class="scripture-mastery container">
+<h2>Your Scripture Mastery Goals</h2>
+<hr/>
+
+<button type="button" class="btn btn-default" ng-click="q1IsCollapsed = !q1IsCollapsed">Q1 Scripture Mastery</button>
+<hr/>
+<div collapse="q1IsCollapsed">
+
+<div class="well q1">
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.one">
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:one')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:one')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:one')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:one')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:one')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:one')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:one')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:one')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:one')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:one')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:one')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:one')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:one')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:one')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:one')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:one')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:one')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:one')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:one')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:one')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:one')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:one')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:one')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:one')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:one')" value="25">Malachi 4:5–6</option>
+</select>
+
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.two" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:two')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:two')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:two')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:two')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:two')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:two')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:two')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:two')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:two')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:two')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:two')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:two')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:two')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:two')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:two')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:two')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:two')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:two')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:two')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:two')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:two')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:two')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:two')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:two')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:two')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.three" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:three')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:three')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:three')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:three')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:three')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:three')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:three')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:three')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:three')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:three')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:three')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:three')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:three')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:three')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:three')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:three')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:three')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:three')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:three')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:three')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:three')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:three')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:three')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:three')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:three')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.four" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:four')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:four')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:four')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:four')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:four')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:four')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:four')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:four')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:four')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:four')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:four')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:four')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:four')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:four')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:four')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:four')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:four')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:four')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:four')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:four')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:four')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:four')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:four')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:four')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:four')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.five" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:five')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:five')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:five')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:five')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:five')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:five')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:five')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:five')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:five')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:five')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:five')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:five')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:five')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:five')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:five')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:five')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:five')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:five')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:five')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:five')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:five')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:five')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:five')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:five')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:five')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.six" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:six')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:six')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:six')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:six')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:six')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:six')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:six')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:six')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:six')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:six')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:six')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:six')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:six')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:six')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:six')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:six')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:six')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:six')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:six')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:six')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:six')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:six')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:six')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:six')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:six')" value="25">Malachi 4:5–6</option>
+</select>
+<select ng-if="needsSeven('q1')" class="form-control" ng-model="scriptureMasteries.scriptureMastery.q1.seven" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q1:seven')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q1:seven')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q1:seven')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q1:seven')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q1:seven')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q1:seven')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q1:seven')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q1:seven')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q1:seven')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q1:seven')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q1:seven')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q1:seven')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q1:seven')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q1:seven')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q1:seven')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q1:seven')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q1:seven')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q1:seven')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q1:seven')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q1:seven')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q1:seven')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q1:seven')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q1:seven')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q1:seven')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q1:seven')" value="25">Malachi 4:5–6</option>
+</select>
+</div>
+<hr/><!--###############################################################################-->
+</div>
+
+<button type="button" class="btn btn-default" ng-click="q2IsCollapsed = !q2IsCollapsed">Q2 Scripture Mastery</button>
+<hr/><!--###############################################################################-->
+<div collapse="q2IsCollapsed">
+
+
+<div class="well q2">
+
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.one">
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:one')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:one')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:one')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:one')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:one')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:one')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:one')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:one')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:one')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:one')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:one')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:one')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:one')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:one')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:one')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:one')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:one')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:one')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:one')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:one')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:one')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:one')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:one')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:one')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:one')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.two" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:two')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:two')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:two')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:two')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:two')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:two')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:two')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:two')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:two')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:two')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:two')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:two')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:two')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:two')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:two')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:two')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:two')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:two')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:two')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:two')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:two')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:two')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:two')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:two')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:two')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.three" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:three')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:three')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:three')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:three')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:three')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:three')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:three')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:three')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:three')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:three')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:three')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:three')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:three')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:three')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:three')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:three')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:three')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:three')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:three')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:three')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:three')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:three')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:three')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:three')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:three')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.four" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:four')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:four')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:four')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:four')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:four')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:four')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:four')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:four')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:four')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:four')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:four')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:four')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:four')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:four')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:four')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:four')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:four')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:four')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:four')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:four')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:four')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:four')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:four')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:four')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:four')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.five" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:five')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:five')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:five')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:five')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:five')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:five')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:five')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:five')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:five')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:five')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:five')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:five')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:five')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:five')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:five')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:five')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:five')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:five')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:five')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:five')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:five')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:five')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:five')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:five')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:five')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.six" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:six')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:six')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:six')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:six')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:six')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:six')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:six')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:six')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:six')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:six')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:six')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:six')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:six')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:six')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:six')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:six')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:six')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:six')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:six')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:six')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:six')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:six')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:six')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:six')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:six')" value="25">Malachi 4:5–6</option>
+</select>
+<select ng-if="needsSeven('q2')" class="form-control" ng-model="scriptureMasteries.scriptureMastery.q2.seven" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q2:seven')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q2:seven')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q2:seven')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q2:seven')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q2:seven')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q2:seven')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q2:seven')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q2:seven')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q2:seven')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q2:seven')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q2:seven')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q2:seven')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q2:seven')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q2:seven')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q2:seven')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q2:seven')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q2:seven')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q2:seven')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q2:seven')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q2:seven')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q2:seven')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q2:seven')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q2:seven')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q2:seven')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q2:seven')" value="25">Malachi 4:5–6</option>
+</select>
+</div>
+<hr/><!--###############################################################################-->
+</div>
+
+<button type="button" class="btn btn-default" ng-click="q3IsCollapsed = !q3IsCollapsed">Q3 Scripture Mastery</button>
+
+
+<hr/><!--###############################################################################-->
+<div collapse="q3IsCollapsed">
+
+<div class="well q3">
+
+
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.one">
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:one')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:one')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:one')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:one')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:one')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:one')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:one')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:one')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:one')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:one')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:one')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:one')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:one')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:one')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:one')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:one')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:one')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:one')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:one')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:one')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:one')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:one')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:one')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:one')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:one')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.two" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:two')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:two')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:two')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:two')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:two')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:two')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:two')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:two')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:two')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:two')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:two')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:two')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:two')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:two')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:two')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:two')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:two')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:two')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:two')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:two')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:two')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:two')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:two')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:two')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:two')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.three" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:three')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:three')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:three')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:three')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:three')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:three')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:three')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:three')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:three')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:three')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:three')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:three')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:three')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:three')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:three')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:three')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:three')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:three')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:three')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:three')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:three')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:three')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:three')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:three')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:three')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.four" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:four')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:four')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:four')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:four')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:four')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:four')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:four')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:four')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:four')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:four')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:four')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:four')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:four')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:four')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:four')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:four')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:four')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:four')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:four')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:four')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:four')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:four')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:four')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:four')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:four')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.five" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:five')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:five')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:five')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:five')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:five')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:five')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:five')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:five')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:five')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:five')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:five')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:five')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:five')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:five')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:five')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:five')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:five')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:five')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:five')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:five')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:five')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:five')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:five')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:five')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:five')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.six" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:six')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:six')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:six')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:six')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:six')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:six')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:six')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:six')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:six')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:six')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:six')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:six')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:six')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:six')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:six')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:six')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:six')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:six')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:six')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:six')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:six')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:six')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:six')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:six')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:six')" value="25">Malachi 4:5–6</option>
+</select>
+<select ng-if="needsSeven('q3')" class="form-control" ng-model="scriptureMasteries.scriptureMastery.q3.seven" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q3:seven')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q3:seven')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q3:seven')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q3:seven')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q3:seven')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q3:seven')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q3:seven')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q3:seven')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q3:seven')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q3:seven')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q3:seven')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q3:seven')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q3:seven')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q3:seven')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q3:seven')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q3:seven')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q3:seven')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q3:seven')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q3:seven')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q3:seven')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q3:seven')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q3:seven')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q3:seven')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q3:seven')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q3:seven')" value="25">Malachi 4:5–6</option>
+</select>
+</div>
+<hr/><!--###############################################################################-->
+</div>
+
+<button type="button" class="btn btn-default" ng-click="q4IsCollapsed = !q4IsCollapsed">Q4 Scripture Mastery</button>
+<hr/><!--###############################################################################-->
+<div collapse="q4IsCollapsed">
+
+
+<div class="well q4">
+
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.one">
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:one')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:one')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:one')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:one')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:one')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:one')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:one')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:one')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:one')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:one')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:one')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:one')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:one')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:one')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:one')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:one')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:one')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:one')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:one')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:one')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:one')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:one')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:one')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:one')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:one')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.two" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:two')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:two')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:two')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:two')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:two')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:two')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:two')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:two')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:two')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:two')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:two')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:two')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:two')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:two')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:two')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:two')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:two')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:two')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:two')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:two')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:two')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:two')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:two')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:two')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:two')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.three" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:three')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:three')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:three')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:three')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:three')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:three')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:three')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:three')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:three')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:three')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:three')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:three')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:three')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:three')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:three')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:three')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:three')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:three')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:three')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:three')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:three')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:three')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:three')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:three')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:three')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.four" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:four')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:four')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:four')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:four')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:four')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:four')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:four')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:four')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:four')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:four')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:four')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:four')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:four')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:four')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:four')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:four')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:four')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:four')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:four')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:four')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:four')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:four')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:four')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:four')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:four')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.five" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:five')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:five')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:five')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:five')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:five')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:five')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:five')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:five')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:five')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:five')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:five')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:five')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:five')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:five')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:five')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:five')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:five')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:five')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:five')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:five')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:five')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:five')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:five')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:five')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:five')" value="25">Malachi 4:5–6</option>
+</select>
+<select class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.six" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:six')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:six')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:six')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:six')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:six')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:six')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:six')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:six')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:six')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:six')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:six')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:six')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:six')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:six')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:six')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:six')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:six')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:six')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:six')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:six')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:six')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:six')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:six')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:six')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:six')" value="25">Malachi 4:5–6</option>
+</select>
+<select ng-if="needsSeven('q4')" class="form-control" ng-model="scriptureMasteries.scriptureMastery.q4.seven" convert-to-number>
+  <option value="null" selected="selected">Choose one</option>
+  <option ng-if="notSelected('1', 'q4:seven')" value="1">Moses 1:39</option>
+  <option ng-if="notSelected('2', 'q4:seven')" value="2">Moses 7:18</option>
+  <option ng-if="notSelected('3', 'q4:seven')" value="3">Abraham 3:22–23</option>
+  <option ng-if="notSelected('4', 'q4:seven')" value="4">Genesis 1:26–27</option>
+  <option ng-if="notSelected('5', 'q4:seven')" value="5">Genesis 2:24</option>
+  <option ng-if="notSelected('6', 'q4:seven')" value="6">Genesis 39:9</option>
+  <option ng-if="notSelected('7', 'q4:seven')" value="7">Exodus 19:5–6</option>
+  <option ng-if="notSelected('8', 'q4:seven')" value="8">Exodus 20:3–17</option>
+  <option ng-if="notSelected('9', 'q4:seven')" value="9">Joshua 24:15</option>
+  <option ng-if="notSelected('10', 'q4:seven')" value="10">1 Samuel 16:7</option>
+  <option ng-if="notSelected('11', 'q4:seven')" value="11">Psalm 24:3–4</option>
+  <option ng-if="notSelected('12', 'q4:seven')" value="12">Psalm 119:105</option>
+  <option ng-if="notSelected('13', 'q4:seven')" value="13">Psalm 127:3</option>
+  <option ng-if="notSelected('14', 'q4:seven')" value="14">Proverbs 3:5–6</option>
+  <option ng-if="notSelected('15', 'q4:seven')" value="15">Isaiah 1:18</option>
+  <option ng-if="notSelected('16', 'q4:seven')" value="16">Isaiah 5:20</option>
+  <option ng-if="notSelected('17', 'q4:seven')" value="17">Isaiah 29:13–14</option>
+  <option ng-if="notSelected('18', 'q4:seven')" value="18">Isaiah 53:3–5</option>
+  <option ng-if="notSelected('19', 'q4:seven')" value="19">Isaiah 58:6–7</option>
+  <option ng-if="notSelected('20', 'q4:seven')" value="20">Isaiah 58:13–14</option>
+  <option ng-if="notSelected('21', 'q4:seven')" value="21">Jeremiah 1:4–5</option>
+  <option ng-if="notSelected('22', 'q4:seven')" value="22">Ezekiel 37:15–17</option>
+  <option ng-if="notSelected('23', 'q4:seven')" value="23">Amos 3:7</option>
+  <option ng-if="notSelected('24', 'q4:seven')" value="24">Malachi 3:8–10</option>
+  <option ng-if="notSelected('25', 'q4:seven')" value="25">Malachi 4:5–6</option>
+</select>
+</div>
+<hr/><!--###############################################################################-->
+</div>
+</div>

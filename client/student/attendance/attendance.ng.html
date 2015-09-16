@@ -1,0 +1,13 @@
+
+<div class = "attendance container text-center">
+  <h2>Attendance</h2>
+  <hr/>
+  <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
+    <datepicker ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+  </div>
+  <div class="row" >
+    <a href="" class="btn btn-lg btn-success" ng-click="markAttendance('full')">Full</a>
+    <a href="" class="btn btn-lg btn-warning" ng-click="markAttendance('partially')">Partial</a>
+    <a href="" class="btn btn-lg btn-danger" ng-click="markAttendance('absent')">Absent</a>
+  </div>
+</div>

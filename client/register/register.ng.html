@@ -1,0 +1,21 @@
+<div>
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<div class="container animate-show check-element user-email ">
+  <label for="user-email" class="form-control">What is your email address?</label>
+  <input type="text" class="form-control" name="user-email" ng-model="user.email" placeholder="example@domain.com">
+</div>
+<div class="container animate-show check-element user-password">
+  <label for="user-password">What is you Password?</label>
+  <input type="password" name="user-password" ng-model="user.password" placeholder="******">
+</div>
+<div class="container animate-show check-element user-password-verify">
+  <label for="user-password-verify">Please verify your password.</label>
+  <input type="password" name="user-password-verify" ng-model="verifyPassword" placeholder="******">
+</div>
+<div class="container animate-show check-element user-password-verify">
+  <label for="user-class-name">Name of Class</label>
+  <input type="text" name="user-class-name" ng-model="user.profile.class.name" placeholder="Oakdale Stake Eau Claire Daily">
+</div>
+<a href="/" class="btn btn-danger">Back</a>
+<a href="" class="btn btn-success" ng-click="signingUp()">Sign Up</a>
