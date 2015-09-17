@@ -1,4 +1,4 @@
-# seminary-app
+# Seminary App
 App for LDS Seminary Daily Class
 
 ###TODOs: 
