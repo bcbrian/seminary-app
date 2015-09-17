@@ -20,22 +20,22 @@ angular.module("myApp").config(['$urlRouterProvider', '$stateProvider', '$locati
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'client/home/home.ng.html',
+        templateUrl: 'client/main/home/home.ng.html',
         controller: 'HomeCtrl'
       })
       .state('signIn', {
         url:'/sign-in',
-        templateUrl: 'client/sign-in/sign-in.ng.html',
+        templateUrl: 'client/user/sign-in/sign-in.ng.html',
         controller: 'SignInCtrl'
       })
       .state('signUp', {
         url:'/sign-up',
-        templateUrl: 'client/sign-up/sign-up.ng.html',
+        templateUrl: 'client/user/sign-up/sign-up.ng.html',
         controller: 'SignUpCtrl'
       })
       .state('register', {
         url:'/register',
-        templateUrl: 'client/register/register.ng.html',
+        templateUrl: 'client/user/register/register.ng.html',
         controller: 'RegisterCtrl'
       })
 

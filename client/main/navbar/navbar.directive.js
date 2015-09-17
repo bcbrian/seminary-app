@@ -3,7 +3,7 @@ angular.module("myApp")
 
   return{
     restrict:'E',
-    templateUrl: 'client/navbar/navbar.ng.html',
+    templateUrl: 'client/main/navbar/navbar.ng.html',
     link:function(scope, element, attrs) {
       var user = $meteor.requireUser();
       user.then(function(){

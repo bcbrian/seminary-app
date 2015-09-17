@@ -1,0 +1,36 @@
+<div>
+  <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+</div>
+<div class="sign-in container">
+  <div class="well well-lg text-center">
+    <h2> Register Class </h2>
+    <hr/>
+    <div class="row">
+      <div class="user-email  col-sm-6 col-sm-offset-3">
+        <input type="text" class="form-control" name="user-email" ng-model="user.email" placeholder="What is your email address?">
+        <hr/>
+      </div>
+
+      <div class="user-password col-sm-6 col-sm-offset-3">
+        <input type="password" class="form-control" name="user-password" ng-model="user.password" placeholder="What is you Password?">
+        <hr/>
+      </div>
+
+      <div class="user-password-verify col-sm-6 col-sm-offset-3">
+        <input type="password" class="form-control" name="user-password-verify" ng-model="verifyPassword" placeholder="Please verify your password.">
+        <hr/>
+      </div>
+
+      <div class="user-password-verify col-sm-6 col-sm-offset-3">
+        <input type="text" class="form-control" name="user-class-name" ng-model="user.profile.class.name" placeholder="Name of Class">
+        <hr/>
+      </div>
+
+      <div class="user-password form-section col-sm-6 col-sm-offset-3" >
+        <a href="" class="btn btn-primary col-xs-12 col-sm-3 col-sm-offset-2" ng-click="signingUp()">Sign Up</a>
+        <hr class = "col-xs-12 hidden-sm hidden-md hidden-lg"/>
+        <a href="/" class="btn btn-danger col-xs-12 col-sm-3 col-sm-offset-2 pull-left">Back</a>
+      </div>
+    </div>
+  </div>
+</div>

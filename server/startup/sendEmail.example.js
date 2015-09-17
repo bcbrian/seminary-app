@@ -1,3 +1,4 @@
+/*
 Meteor.startup(function () {
   smtp = {
     username: '',   // eg: someEmail@gmail.com
@@ -43,3 +44,4 @@ Meteor.methods({
     Accounts.sendVerificationEmail(user._id);
   }
 });
+*/
