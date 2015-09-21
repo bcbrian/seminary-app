@@ -1,8 +1,14 @@
-angular.module("student.scriptureMastery")
-.controller("ScriptureMasteryCtrl", ["$scope", "$rootScope", "$state", "$meteor", function($scope, $rootScope, $state, $meteor){
+angular.module('student.scriptureMastery')
+.controller('ScriptureMasteryCtrl', [
+  '$scope',
+  'scriptureMasteries',
+  function(
+    $scope,
+    scriptureMasteries
+  ){
 
-  $scope.ScriptureMasteries = $meteor.collection(ScriptureMasteries, false);
-  $scope.scriptureMasteries = $rootScope.scriptureMasteries;
+  $scope.ScriptureMasteries = $scope.$meteorCollection(ScriptureMasteries, false);
+  $scope.scriptureMasteries = scriptureMasteries;
 
 
   $scope.q1IsCollapsed = false;

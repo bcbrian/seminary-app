@@ -1,5 +1,4 @@
-//Attendances
-Attendances = new Mongo.Collection("Attendances");
+Attendances = new Mongo.Collection('Attendances');
 
 Attendances.allow({
   insert: function (userId, Attendance) {

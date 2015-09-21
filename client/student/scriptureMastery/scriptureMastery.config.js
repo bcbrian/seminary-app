@@ -19,18 +19,11 @@ angular.module('student.scriptureMastery').config([
         templateUrl: 'client/student/scriptureMastery/scriptureMastery.ng.html',
         controller: 'ScriptureMasteryCtrl',
         resolve: {
-          "currentUser": ["$meteor", function($meteor){
+          'currentUser': ['$meteor', function($meteor){
             return $meteor.requireUser();
-          }]
-        }
-      })
-      .state('studentScriptureMasteryLoading', {
-        url: '/student/scripture-mastery-loading',
-        templateUrl: 'client/student/scriptureMastery/scriptureMasteryLoading.ng.html',
-        controller: 'ScriptureMasteryCtrl',
-        resolve: {
-          "currentUser": ["$meteor", function($meteor){
-            return $meteor.requireUser();
+          }],
+          'scriptureMasteries': ['ScriptureMasteryService', function(ScriptureMasteryService){
+            return ScriptureMasteryService.getScriptureMasteries();
           }]
         }
       });

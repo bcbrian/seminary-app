@@ -19,17 +19,11 @@ angular.module('student.attendance').config([
         templateUrl: 'client/student/attendance/attendance.ng.html',
         controller: 'AttendanceCtrl',
         resolve: {
-          "currentUser": ["$meteor", function($meteor){
+          'currentUser': ['$meteor', function($meteor){
             return $meteor.requireUser();
-          }]
-        }
-      }).state('studentAttendanceLoading', {
-        url: '/student/attendance-loading',
-        templateUrl: 'client/student/attendance/attendanceLoading.ng.html',
-        controller: 'AttendanceCtrl',
-        resolve: {
-          "currentUser": ["$meteor", function($meteor){
-            return $meteor.requireUser();
+          }],
+          'attendances':['AttendanceService',function(AttendanceService){
+            return AttendanceService.getAttendances();
           }]
         }
       });

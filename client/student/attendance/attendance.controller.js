@@ -1,21 +1,13 @@
-angular.module("student.attendance")
-.controller("AttendanceCtrl", [
-  "$scope",
-  "$rootScope",
-  "$state",
-  "$meteor",
+angular.module('student.attendance')
+.controller('AttendanceCtrl', [
+  '$scope',
+  'attendances',
   function(
     $scope,
-    $rootScope,
-    $state,
-    $meteor
+    attendances
   ){
-    $scope.Attendances = $meteor.collection(Attendances, false);
-    $scope.events = $rootScope.attendances;
-
-
-
-
+    $scope.Attendances = $scope.$meteorCollection(Attendances, false);
+    $scope.events = attendances;
 
     $scope.today = function() {
       $scope.dt = new Date();
@@ -88,7 +80,7 @@ angular.module("student.attendance")
           status:attendance
         });
       }
-      
+
       console.log('events after', $scope.events);
     };
 
