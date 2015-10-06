@@ -49,20 +49,13 @@ angular.module("myApp")
   };
 
   $scope.signingUp = function (){
-    console.log('this user is signing up', $scope.user);
-    console.log('passwords? ',$scope.comparePasswords());
-    console.log('valid class? ',$scope.validClass());
     if($scope.comparePasswords() && $scope.validClass()){
       $meteor.createUser($scope.user).then(
         function(){
-          console.log('saved user');
 
             var user = $meteor.requireUser();
             user.then(function(){
-              console.log('this user was created', user);
               $scope.Classes.save({name:$scope.user.profile.class.name,owner:user.$$state.value._id}).then(function(){
-                console.log('saved class');
-                console.log('updating user');
                 $meteor.call("userUpdateProfile", $scope.user.profile);
                 $scope.gotLoggedInPage();
             });
@@ -75,7 +68,6 @@ angular.module("myApp")
 
         },function(error){
           $scope.alerts.push({"type":"danger","msg":"Sorry, we failed to created your account and log you in."});
-          console.log("failed", error);
         }
       );
     }

@@ -7,3 +7,7 @@ Meteor.publish("user", function (userId) {
 Meteor.publish("userEmail", function (userId) {
   return Meteor.users.find({userId:userId}, {fields: {emails: 1}});
 });
+Meteor.publish("myStudents", function (className) {
+  console.log('CLASS NAME: ', className);
+  return Meteor.users.find({});
+});

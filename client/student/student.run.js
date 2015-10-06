@@ -10,7 +10,6 @@ angular.module("student").run([
     $rootScope.$on("$stateChangeSuccess", function(event, toState, toParams, fromState, fromParams) {
       ///////////////////////////////////////////////////////////////////////////////////////////////////
       if(toState.name === 'studentLoading'){
-        console.log('GOT HERE WITH', toState.name);
         $rootScope.attendances = {};
         $rootScope.readings = {};
         $rootScope.scriptureMasteries = {};
@@ -30,7 +29,6 @@ angular.module("student").run([
               $rootScope.attendances = $rootScope.$meteorObject(Attendances, {}, true);
               $rootScope.readings = $rootScope.$meteorObject(Readings, {}, true);
               $rootScope.scriptureMasteries = $rootScope.$meteorObject(ScriptureMasteries, {}, true);
-              console.log($rootScope.attendances);
               return $state.go('student');
             });
           });

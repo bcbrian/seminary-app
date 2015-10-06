@@ -67,11 +67,9 @@ angular.module('student.attendance')
     };
 
     $scope.markAttendance = function(attendance){
-      console.log('events before', $scope.events);
 
       var exists = lodash.find($scope.events.attendance, {date:moment($scope.dt).format('L')});
       if(exists){
-        console.log(exists);
         exists.status = attendance;
       }else{
 
@@ -81,7 +79,6 @@ angular.module('student.attendance')
         });
       }
 
-      console.log('events after', $scope.events);
     };
 
   }

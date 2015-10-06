@@ -56,6 +56,21 @@ angular.module("myApp")
               }
             ];
           }
+          if(userType === 'teacher'){
+            scope.name = scope.user.profile.firstName;
+            routes = [
+              {
+                name:"Attendance",
+                url:"attendance",
+              },{
+                name:"Reading",
+                url:"reading"
+              },{
+                name:"Scripture Mastery",
+                url:"scripture-mastery",
+              }
+            ];
+          }
           for (var i = 0; i < routes.length; i++) {
             url = "/"+userType +"/"+ routes[i].url;
             links.push(new link(routes[i].name, url));

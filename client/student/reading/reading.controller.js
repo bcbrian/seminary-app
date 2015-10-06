@@ -66,11 +66,9 @@ angular.module('student.reading')
     };
 
     $scope.markAttendance = function(reading){
-      console.log('events before', $scope.events);
 
       var exists = lodash.find($scope.events.reading, {date:moment($scope.dt).format('L')});
       if(exists){
-        console.log(exists);
         exists.status = reading;
       }else{
 
@@ -80,7 +78,6 @@ angular.module('student.reading')
         });
       }
 
-      console.log('events after', $scope.events);
     };
   }
 ]);

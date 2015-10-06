@@ -14,7 +14,6 @@ angular.module('student')
     $scope.mastered = 0;
 
     $rootScope.$watch('attendances',function(attendances){
-      console.log('I changed!');
       if(attendances.attendance){
         for (var i = 0; i < attendances.attendance.length; i++) {
           if(attendances.attendance[i].status === 'absent'){

@@ -5,10 +5,11 @@ Attendances.allow({
     return userId && Attendance.owner === userId;
   },
   update: function (userId, Attendance, fields, modifier) {
-    if (userId !== Attendance.owner)
-      return false;
+    console.log('UPDATING...');
+    if (userId === Attendance.owner || Meteor.call('isTeacher', userId, Attendance.owner))
+      return true;
 
-    return true;
+    return false;
   },
   remove: function (userId, Attendance) {
     if (userId !== Attendance.owner)
@@ -22,7 +23,8 @@ if (Meteor.isServer) {
   Meteor.publish('ownerAttendances', function(){
     return Attendances.find({owner: this.userId});
   });
-  Meteor.publish('allAttendances', function(jobId){
+  Meteor.publish('studentAttendances', function(jobId){
     return Attendances.find({});
   });
+
 }

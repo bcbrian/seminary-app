@@ -54,16 +54,6 @@ angular.module("myApp").config(['$urlRouterProvider', '$stateProvider', '$locati
             return $meteor.requireUser();
           }]
         }
-      })
-      .state('studentProfile', {
-        url: '/student/profile',
-        templateUrl: 'client/student/profile/profile.ng.html',
-        controller: 'StudentProfileCtrl',
-        resolve: {
-          "currentUser": ["$meteor", function($meteor){
-            return $meteor.requireUser();
-          }]
-        }
       });
 
     $urlRouterProvider.otherwise("/");//Not found page???

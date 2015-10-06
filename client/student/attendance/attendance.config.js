@@ -22,8 +22,8 @@ angular.module('student.attendance').config([
           'currentUser': ['$meteor', function($meteor){
             return $meteor.requireUser();
           }],
-          'attendances':['AttendanceService',function(AttendanceService){
-            return AttendanceService.getAttendances();
+          'attendances':['StudentAttendanceService',function(StudentAttendanceService){
+            return StudentAttendanceService.getAttendances();
           }]
         }
       });

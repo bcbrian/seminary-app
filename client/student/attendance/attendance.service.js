@@ -1,4 +1,4 @@
-angular.module('student.attendance').service('AttendanceService', [
+angular.module('student.attendance').service('StudentAttendanceService', [
   '$rootScope',
   '$q',
   function(
