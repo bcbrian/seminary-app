@@ -1,0 +1,64 @@
+
+<div class = "teacher-attendance container text-center">
+  <div class="row">
+    <div class="col-xs-6">
+      <ul as-sortable="dragControlListeners" ng-model="regularStudents">
+        <h2>Regular</h2>
+        <hr/>
+
+
+
+
+
+        <li ng-repeat="student in regularStudents" as-sortable-item>
+          <div class="row" as-sortable-item-handle>
+            <div class="col-xs-12 panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}" ng-click="editName = true" ng-hide="editName">
+              <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+            </div>
+            <div class="col-xs-12" ng-show="editName">
+              <div class="col-xs-5">
+                <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="student.profile.firstName">
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" type="text" name="lastName" placeholder="Last Name" ng-model="student.profile.lastName">
+              </div>
+              <span ng-click="editName = false">x</span>
+
+            </div>
+
+            <hr class="col-xs-12"/>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <ul as-sortable="dragControlListeners" ng-model="presidentStudents">
+        <h2>Presidents</h2>
+        <hr/>
+
+        <li ng-repeat="student in presidentStudents" as-sortable-item>
+          <div class="row" as-sortable-item-handle>
+            <div class="col-xs-12 panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}" ng-click="editName = true" ng-hide="editName">
+              <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+            </div>
+            <div class="col-xs-12" ng-show="editName">
+              <div class="col-xs-5">
+                <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="student.profile.firstName">
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" type="text" name="lastName" placeholder="Last Name" ng-model="student.profile.lastName">
+              </div>
+              <span ng-click="editName = false">x</span>
+
+            </div>
+
+            <hr class="col-xs-12"/>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</div>
