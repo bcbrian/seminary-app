@@ -41,7 +41,7 @@ angular.module("myApp")
         var url = "";
 
         if(userType){
-          if(userType === 'student'){
+          if(userType === 'student' || userType === 'president'){
             scope.name = scope.user.profile.firstName;
             routes = [
               {
@@ -56,15 +56,21 @@ angular.module("myApp")
               }
             ];
           }
+          if(userType === 'president'){
+            routes.push({
+              name:"Class Attendance",
+              url:"class-attendance",
+            });
+          }
           if(userType === 'teacher'){
             scope.name = scope.user.profile.firstName;
             routes = [
               {
                 name:"Attendance",
-                url:"attendance",
+                url:"class-attendance",
               },{
-                name:"Reading",
-                url:"reading"
+                name:"Roles",
+                url:"roles"
               },{
                 name:"Scripture Mastery",
                 url:"scripture-mastery",
@@ -72,7 +78,7 @@ angular.module("myApp")
             ];
           }
           for (var i = 0; i < routes.length; i++) {
-            url = "/"+userType +"/"+ routes[i].url;
+            url = "/"+( userType === 'president' ? 'student' : userType )+"/"+ routes[i].url;
             links.push(new link(routes[i].name, url));
           }
 

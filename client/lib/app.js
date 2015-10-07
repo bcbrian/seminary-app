@@ -2,12 +2,16 @@ angular.module('myApp',[
   //core
   'seminary.core',
   //features
+  //class
+  'class.attendance',
+  //student
   'student',
   'student.attendance',
-  'teacher.attendance',
   'student.profile',
   'student.reading',
-  'student.scriptureMastery'
+  'student.scriptureMastery',
+  //teacher
+  'teacher.roles'
 ]);
 
 function onReady() {
@@ -24,7 +28,7 @@ angular.module('seminary.core',[
   'ui.bootstrap',
   'ui.router',
   'angularUtils.directives.dirPagination',
-  'ui.sortable',
+  'as.sortable',
   'ngAnimate',
   'd3'
 ]);

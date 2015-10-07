@@ -3,7 +3,6 @@ angular.module("myApp")
   $scope.Classes = $meteor.collection(Classes, false);
 
   $scope.$meteorSubscribe("allClasses").then(function (handle) {
-    console.log('ready!');
   });
 
   $scope.alerts = [];
@@ -42,7 +41,6 @@ angular.module("myApp")
 
   $scope.validClass = function(){
     var findClass = $scope.$meteorObject(Classes, {name:$scope.user.profile.class.name}, false);
-    console.log('findClass', findClass);
     if(findClass.name){
       $scope.user.profile.class.id  = findClass._id;
       return true;
@@ -53,7 +51,6 @@ angular.module("myApp")
   };
 
   $scope.signingUp = function (){
-    console.log('sigining up');
     if($scope.comparePasswords() && $scope.validClass()){
       $meteor.createUser($scope.user).then(
         function(){
@@ -66,7 +63,6 @@ angular.module("myApp")
 
         },function(error){
           $scope.alerts.push({"type":"danger","msg":"Sorry, we failed to created your account and log you in."});
-          console.log("failed", error);
         }
       );
     }

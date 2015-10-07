@@ -1,7 +1,7 @@
 
 Meteor.users.allow({
   update: function (userId, user, fields, modifier) {
-    if (userId === user.owner || Meteor.call('isTeacher', userId, user._id))
+    if (userId === user.owner || Meteor.call('isTeacher', userId, user._id) || Meteor.call('isClassPresident', userId, user._id))
       return true;
 
     return false;
@@ -22,21 +22,14 @@ Meteor.methods({
   userUpdateProfile: function (profile) {
     Meteor.users.update(Meteor.userId(), {$set : { profile: profile }});
   },
-  isTeacher: function(teacherId, studentId){
+  isTeacher: function(presidentId, studentId){
+    var president = Meteor.users.find({'_id':presidentId}).fetch();
+    var student = Meteor.users.find({'_id':studentId}).fetch();
 
-        console.log('ASKING IF TEACHER: ', teacherId);
-        console.log('ASKING IF STUDENT: ', studentId);
-        var classes = Classes.find({'owner':teacherId}).fetch();
-        var student = Meteor.users.find({'_id':studentId}).fetch();
-        console.log('CLASSES: ', JSON.stringify(classes[0]));
-        console.log('STUDENT: ', JSON.stringify(student[0]));
-        if(classes[0].name === student[0].profile.class.name){
-          return true;
-        }else{
-          return false;
-        }
-
-
-
+    if(president[0].profile.type === 'president' && president[0].profile.class.name === student[0].profile.class.name){
+      return true;
+    }else{
+      return false;
+    }
   }
 });

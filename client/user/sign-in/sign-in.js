@@ -36,7 +36,8 @@ angular.module("myApp")
     var user = $meteor.requireUser();
     user.then(
       function(){
-        $state.go(user.$$state.value.profile.type);
+        var goto = user.$$state.value.profile.type === 'president' ? 'student': user.$$state.value.profile.type;
+        $state.go(goto);
       },
       function(error){
           alert(error);
