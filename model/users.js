@@ -19,14 +19,25 @@ Meteor.methods({
       throw new Meteor.Error(404, "PROFILE_UNDEFINED");
     }
   },
-  userUpdateProfile: function (profile) {
-    Meteor.users.update(Meteor.userId(), {$set : { profile: profile }});
+  userUpdateProfile: function (profile, userId) {
+    userId = userId || Meteor.userId()
+    return Meteor.users.update( userId, {$set : { profile: profile }});
   },
-  isTeacher: function(presidentId, studentId){
+  isClassPresident: function(presidentId, studentId){
     var president = Meteor.users.find({'_id':presidentId}).fetch();
     var student = Meteor.users.find({'_id':studentId}).fetch();
 
     if(president[0].profile.type === 'president' && president[0].profile.class.name === student[0].profile.class.name){
+      return true;
+    }else{
+      return false;
+    }
+  },
+  isTeacher: function(teacherId, studentId){
+    var classes = Classes.find({'owner':teacherId}).fetch();
+    var student = Meteor.users.find({'_id':studentId}).fetch();
+
+    if(classes[0].name === student[0].profile.class.name){
       return true;
     }else{
       return false;
