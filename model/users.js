@@ -26,6 +26,8 @@ Meteor.methods({
   isClassPresident: function(presidentId, studentId){
     var president = Meteor.users.find({'_id':presidentId}).fetch();
     var student = Meteor.users.find({'_id':studentId}).fetch();
+    console.log('pres: ',JSON.stringify(president));
+    console.log('student: ',JSON.stringify(student));
 
     if(president[0].profile.type === 'president' && president[0].profile.class.name === student[0].profile.class.name){
       return true;
@@ -36,6 +38,8 @@ Meteor.methods({
   isTeacher: function(teacherId, studentId){
     var classes = Classes.find({'owner':teacherId}).fetch();
     var student = Meteor.users.find({'_id':studentId}).fetch();
+
+    if(!classes[0]) return false;
 
     if(classes[0].name === student[0].profile.class.name){
       return true;

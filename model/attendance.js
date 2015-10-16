@@ -6,7 +6,7 @@ Attendances.allow({
   },
   update: function (userId, Attendance, fields, modifier) {
     console.log('UPDATING...');
-    if (userId === Attendance.owner || Meteor.call('isTeacher', userId, Attendance.owner) || Meteor.call('isClassPresident', userId, user._id))
+    if (userId === Attendance.owner || Meteor.call('isTeacher', userId, Attendance.owner) || Meteor.call('isClassPresident', userId, Attendance.owner))
       return true;
 
     return false;

@@ -36,3 +36,7 @@
     border-radius: 6px;
     width: 30%;
 }
+
+.class-attendance .student-panel.panel{
+  border:2px solid transparent;
+}

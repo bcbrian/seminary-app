@@ -1,5 +1,5 @@
 
-<div class = "teacher-attendance container text-center">
+<div class = "class-attendance container text-center">
   <h2>Attendance</h2>
   <hr/>
   <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
@@ -7,8 +7,12 @@
   </div>
   <hr/>
   <div class="row" ng-repeat="student in students" ng-show="student.profile.type !== 'teacher'">
-    <div class="col-sm-6 panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}" ng-click="editName = true" ng-hide="editName">
-      <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+    <div class="col-sm-6" ng-click="editName = true" ng-hide="editName">
+      <div class="panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}">
+        <div class="panel-heading">
+          <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+        </div>
+      </div>
     </div>
     <div class="col-sm-6" ng-show="editName">
       <div class="col-xs-5 col-sm-5">

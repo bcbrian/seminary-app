@@ -83,22 +83,22 @@ angular.module('class.attendance')
     };
 
     $scope.getStatus = function(studentId){
-      // var attendance = $scope.$meteorObject(Attendances, {'owner':studentId}, false);
-      // var exists = lodash.find(attendance.attendance, {date:moment($scope.dt).format('L')});
-      // if(exists){
-      //   switch(exists.status){
-      //     case 'full':
-      //       return 'success';
-      //     case 'partially':
-      //       return 'warning';
-      //     case 'absent':
-      //       return 'danger';
-      //     default:
-      //       return 'default';
-      //   }
-      // }else{
-      //   return 'default';
-      // }
+      var attendance = lodash.find($scope.attendances, {'owner':studentId});
+      var exists = lodash.find(attendance.attendance, {date:moment($scope.dt).format('L')});
+      if(exists){
+        switch(exists.status){
+          case 'full':
+            return 'success';
+          case 'partially':
+            return 'warning';
+          case 'absent':
+            return 'danger';
+          default:
+            return 'default';
+        }
+      }else{
+        return 'default';
+      }
     };
 
   }
