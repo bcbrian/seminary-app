@@ -11,7 +11,7 @@ angular.module('class.attendance')
     $scope.Attendances = $scope.$meteorCollection(Attendances, false);
     $scope.attendances = attendances;
     $scope.students = students;
-
+    $scope.review = false;
 
 
     $scope.today = function() {
@@ -26,6 +26,9 @@ angular.module('class.attendance')
     // Disable weekend selection
     $scope.disabled = function(date, mode) {
       return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    };
+    $scope.disabledForReview = function(date, mode) {
+      return ( mode === 'day' && ( date.getDay() !== 0 ) );
     };
 
     $scope.toggleMin = function() {
@@ -66,25 +69,27 @@ angular.module('class.attendance')
       return '';
     };
 
-    $scope.markAttendance = function(student, attendanceStatus){
-      var attendance = $scope.$meteorObject(Attendances, {'_id':lodash.result( lodash.find( $scope.attendances, {owner:student} ), '_id' )}, true);
-      var exists = lodash.find(attendance.attendance, {date:moment($scope.dt).format('L')});
+    $scope.markAttendance = function(studentId, attendanceStatus, date){
+      date = date ? moment(date, "L") : moment($scope.dt);
+      var attendance = $scope.$meteorObject(Attendances, {'_id':lodash.result( lodash.find( $scope.attendances, {owner:studentId} ), '_id' )}, true);
+      var exists = lodash.find(attendance.attendance, {date:date.format('L')});
 
       if(exists){
         exists.status = attendanceStatus;
       }else{
 
         attendance.attendance.push({
-          date:moment($scope.dt).format('L'),
+          date:date.format('L'),
           status:attendanceStatus
         });
       }
       attendance.save();
     };
 
-    $scope.getStatus = function(studentId){
+    $scope.getStatus = function(studentId, date){
+      date = date ? moment(date, "L") : moment($scope.dt);
       var attendance = lodash.find($scope.attendances, {'owner':studentId});
-      var exists = lodash.find(attendance.attendance, {date:moment($scope.dt).format('L')});
+      var exists = lodash.find(attendance.attendance, {date:date.format('L')});
       if(exists){
         switch(exists.status){
           case 'full':
@@ -101,5 +106,50 @@ angular.module('class.attendance')
       }
     };
 
+    $scope.days = [];
+    $scope.getWeek = function(){
+      var week = [];
+      var selectedDate = moment($scope.dt);
+      var dayOfWeek = selectedDate.day();
+      for (var i = 1; i < 6; i++) {
+        week.push({
+          day:selectedDate.day(dayOfWeek + i).format('DD'),
+          date:selectedDate.day(dayOfWeek + i).format('L')
+        });
+      }
+      $scope.days = week;
+    };
+
+    $scope.switchView = function(){
+      $scope.review = !$scope.review;
+      if($scope.review){
+        $scope.getWeek();
+      }
+    };
+
+    $scope.$watch('dt', function(){
+      if($scope.review){
+        $scope.getWeek();
+      }
+    });
+
+    $scope.quickChange = function(studentId, date){
+      var status = $scope.getStatus(studentId, date);
+      switch(status){
+        case 'success':
+          $scope.markAttendance(studentId, 'absent', date);
+          break;
+        case 'warning':
+          $scope.markAttendance(studentId, 'full', date);
+          break;
+        case 'danger':
+          $scope.markAttendance(studentId, 'partially', date);
+          break;
+        default:
+          $scope.markAttendance(studentId, 'full', date);
+          break;
+      }
+      $scope.getWeek();
+    };
   }
 ]);

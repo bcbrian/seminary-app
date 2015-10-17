@@ -1,34 +1,77 @@
 
 <div class = "class-attendance container text-center">
   <h2>Attendance</h2>
+  <button class="btn btn-lg btn-primary" ng-click="switchView()">{{ review ? 'Input' : 'Review' }}</button>
   <hr/>
-  <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
-    <datepicker ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
-  </div>
-  <hr/>
-  <div class="row" ng-repeat="student in students" ng-show="student.profile.type !== 'teacher'">
-    <div class="col-sm-6" ng-click="editName = true" ng-hide="editName">
-      <div class="panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}">
-        <div class="panel-heading">
-          <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+
+  <div class="input-attendance" ng-show="!review">
+    <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
+      <datepicker date-disabled="disabled(date, mode)" ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+    </div>
+    <hr/>
+    <div class="row" ng-repeat="student in students" ng-show="student.profile.type !== 'teacher'">
+      <div class="col-sm-6" ng-click="editName = true" ng-hide="editName">
+        <div class="panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}">
+          <div class="panel-heading">
+            <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-6" ng-show="editName">
-      <div class="col-xs-5 col-sm-5">
-        <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="student.profile.firstName">
-      </div>
-      <div class="col-xs-5 col-sm-5">
-        <input class="form-control" type="text" name="lastName" placeholder="Last Name" ng-model="student.profile.lastName">
-      </div>
-      <span ng-click="editName = false">x</span>
+      <div class="col-sm-6" ng-show="editName">
+        <div class="col-xs-5 col-sm-5">
+          <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="student.profile.firstName">
+        </div>
+        <div class="col-xs-5 col-sm-5">
+          <input class="form-control" type="text" name="lastName" placeholder="Last Name" ng-model="student.profile.lastName">
+        </div>
+        <span ng-click="editName = false">x</span>
 
+      </div>
+      <div class="col-sm-6">
+        <a href="" class="btn btn-lg btn-success" ng-click="markAttendance(student._id, 'full')">Full</a>
+        <a href="" class="btn btn-lg btn-warning" ng-click="markAttendance(student._id, 'partially')">Partial</a>
+        <a href="" class="btn btn-lg btn-danger" ng-click="markAttendance(student._id, 'absent')">Absent</a>
+      </div>
+      <hr/>
     </div>
-    <div class="col-sm-6">
-      <a href="" class="btn btn-lg btn-success" ng-click="markAttendance(student._id, 'full')">Full</a>
-      <a href="" class="btn btn-lg btn-warning" ng-click="markAttendance(student._id, 'partially')">Partial</a>
-      <a href="" class="btn btn-lg btn-danger" ng-click="markAttendance(student._id, 'absent')">Absent</a>
+  </div>
+  <div class="input-attendance" ng-show="review">
+    <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
+      <datepicker date-disabled="disabledForReview(date, mode)" ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
     </div>
-    <hr class="col-xs-12"/>
+    <hr/>
+    <div class="row" ng-repeat="student in students" ng-show="student.profile.type !== 'teacher'">
+      <div class="col-sm-6" ng-click="editName = true" ng-hide="editName">
+        <div class="panel" ng-class="{'panel-success':getStatus(student._id)==='success', 'panel-warning':getStatus(student._id)==='warning', 'panel-danger':getStatus(student._id)==='danger', 'panel-default':getStatus(student._id)==='default'}">
+          <div class="panel-heading">
+            <h4>{{ student.profile.firstName ? student.profile.firstName + ' ' + student.profile.lastName : student.emails[0].address }}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" ng-show="editName">
+        <div class="col-xs-5 col-sm-5">
+          <input class="form-control" type="text" name="firstName" placeholder="First Name" ng-model="student.profile.firstName">
+        </div>
+        <div class="col-xs-5 col-sm-5">
+          <input class="form-control" type="text" name="lastName" placeholder="Last Name" ng-model="student.profile.lastName">
+        </div>
+        <span ng-click="editName = false">x</span>
+
+      </div>
+
+
+      <div  class="review-days"
+            ng-repeat="day in $parent.days"
+            ng-click="quickChange(student._id, day.date)">
+
+        <div class="panel" ng-class="{'panel-success':getStatus(student._id, day.date)==='success', 'panel-warning':getStatus(student._id, day.date)==='warning', 'panel-danger':getStatus(student._id, day.date)==='danger', 'panel-default':getStatus(student._id, day.date)==='default'}">
+          <div class="panel-heading">
+            <h4>{{day.day}}</h4>
+          </div>
+        </div>
+      </div>
+      <hr/>
+    </div>
+
   </div>
 </div>
