@@ -53,6 +53,9 @@ angular.module("myApp")
               },{
                 name:"Scripture Mastery",
                 url:"scripture-mastery",
+              },{
+                name:"Devotionals",
+                url:"devotionals",
               }
             ];
           }
@@ -74,6 +77,9 @@ angular.module("myApp")
               },{
                 name:"Scripture Mastery",
                 url:"scripture-mastery",
+              },{
+                name:"Devotionals",
+                url:"devotionals",
               }
             ];
           }

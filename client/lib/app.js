@@ -4,6 +4,7 @@ angular.module('myApp',[
   //features
   //class
   'class.attendance',
+  'class.devotional',
   //student
   'student',
   'student.attendance',

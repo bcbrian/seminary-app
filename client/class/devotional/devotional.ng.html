@@ -1,0 +1,138 @@
+
+<div class = "devotional container text-center">
+  <h2>Devotionals</h2>
+  <button class="btn btn-lg btn-primary" ng-click="switchView()">{{ showAllDevotionals ? 'My Devotionals' : 'All Devotionals' }}</button>
+  <hr/>
+
+  <div class="row" ng-show="$root.currentUser.profile.type === 'teacher' || $root.currentUser.profile.type === 'president'">
+    <div class="col-sm-6">
+      <div style="display:inline-block; min-height:290px;" ng-init="loadCalandarEvents()">
+        <datepicker date-disabled="disabled(date, mode)" ng-model="dt" show-weeks="false" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker>
+      </div>
+    </div>
+    <div class="col-sm-6 form-horizontal">
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Conducting</label>
+        <div class="col-xs-8 ">
+          <select class="form-control"
+            name="conductor"
+            ng-model="thisDevotionals.conductor"
+            ng-options="president._id as (president.profile.firstName + ' ' + president.profile.lastName) for president in presidents">
+            <option value="">Is By</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Hymn</label>
+        <div class="col-xs-8 ">
+          <input class="form-control" ng-model="thisDevotionals.hymn" type="text" placeholder="Number Is"/>
+        </div>
+      </div>
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Opening Prayer</label>
+        <div class="col-xs-8 ">
+          <select class="form-control"
+            ng-model="thisDevotionals.openingPrayer"
+            ng-options="student._id as (student.profile.firstName + ' ' + student.profile.lastName) for student in students">
+            <option value="">Is By</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Devotional</label>
+        <div class="col-xs-8 ">
+          <select class="form-control"
+            ng-model="thisDevotionals.devotional"
+            ng-options="student._id as (student.profile.firstName + ' ' + student.profile.lastName) for student in students">
+            <option value="">Is By</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Theme</label>
+        <div class="col-xs-8 ">
+          <input class="form-control" ng-model="thisDevotionals.topic" type="text" placeholder="Is About"/>
+        </div>
+      </div>
+      <div class="form-group">
+
+
+        <label class="col-xs-4 control-label" for="conductor">Closing Prayer</label>
+        <div class="col-xs-8 ">
+          <select class="form-control"
+            ng-model="thisDevotionals.closingPrayer"
+            ng-options="student._id as (student.profile.firstName + ' ' + student.profile.lastName) for student in students">
+            <option value="">Is By</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class=" btn btn-success form-control" type="button" ng-click="submitDevotional()" ng-hide="thisDevotionals._id"> Submit Devotional </button>
+      </div>
+    </div>
+    <hr/>
+  </div>
+  <div class="row" ng-repeat="devotional in devotionals">
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">{{devotional.date}}</div>
+      <div class="panel-body">
+        <div class="col-xs-6 text-right">
+          Conductor
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.conductor ? ( devotional.conductor | userName ) : 'Unasigned'}}
+        </div>
+        <div class="col-xs-6 text-right">
+          Hymn
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.hymn ? devotional.hymn : 'Unasigned'}}
+        </div>
+        <div class="col-xs-6 text-right">
+          Opening Prayer
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.openingPrayer ? ( devotional.openingPrayer | userName ) : 'Unasigned'}}
+        </div>
+        <div class="col-xs-6 text-right">
+          Devotional
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.devotional ? ( devotional.devotional | userName ) : 'Unasigned'}}
+        </div>
+        <div class="col-xs-6 text-right">
+          Topic
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.topic ? devotional.topic : 'Unasigned'}}
+        </div>
+        <div class="col-xs-6 text-right">
+          Closing Prayer
+        </div>
+        <div class="col-xs-6 text-left">
+          {{devotional.closingPrayer ? ( devotional.closingPrayer | userName ) : 'Unasigned'}}
+        </div>
+      </div>
+
+      <!-- Table -->
+      <!-- <table class="table">
+        ...
+      </table> -->
+    </div>
+
+    <!-- {{devotional.date}} -->
+  </div>
+</div>

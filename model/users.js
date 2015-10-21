@@ -46,5 +46,18 @@ Meteor.methods({
     }else{
       return false;
     }
+  },
+  getClassId: function(){
+    var user = Meteor.user();
+    var classes = Classes.find({'name':user.profile.class.name}).fetch();
+    return classes[0]._id;
+  },
+  isThisClassPresident: function(){
+    var user = Meteor.user();
+    return user.profile.type === 'president';
+  },
+  isThisClassTeacher: function(){
+    var user = Meteor.user();
+    return user.profile.type === 'teacher';
   }
 });
