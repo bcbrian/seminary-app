@@ -1,5 +1,5 @@
 # Seminary App
-App for LDS Seminary Daily Class
+Meteor App for LDS Seminary Daily Class
 
 ###TODOs:
   + remoove heavy lifting from run function into service for students mirror what was done in reading
