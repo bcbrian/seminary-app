@@ -3,6 +3,7 @@ angular.module('myApp',[
   'seminary.core',
   //features
   //class
+  'class.announcements',
   'class.attendance',
   'class.devotional',
   //student

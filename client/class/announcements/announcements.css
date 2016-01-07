@@ -1,0 +1,64 @@
+
+  .full button  {
+    background-color: limegreen;
+    border-radius: 3px;
+    color: black;
+  }
+  .partially button  {
+    background-color: orange;
+    border-radius: 3px;
+    color: black;
+  }
+
+  .absent button  {
+    background-color: red;
+    border-radius: 3px;
+    color: black;
+  }
+
+  .attendance .btn-sm{
+    padding: 5px 10px;
+    font-size: 21px;
+    line-height: 1.5;
+    border-radius: 3px;
+  }
+
+  .attendance .row{
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .attendance .btn-lg{
+    padding: 10px 0px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    width: 30%;
+}
+
+.class-attendance .student-panel.panel{
+  border:2px solid transparent;
+}
+
+.class-attendance .review-days .panel-heading {
+    padding: 10px 6px;
+}
+.class-attendance .review-days {
+  width: 20%;
+  float: left;
+  padding: 0px 15px;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .class-attendance .review-days {
+      width: 10%;
+  }
+}

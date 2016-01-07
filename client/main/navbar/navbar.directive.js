@@ -64,6 +64,10 @@ angular.module("myApp")
               name:"Class Attendance",
               url:"class-attendance",
             });
+            routes.push({
+              name:"Announcements",
+              url:"announcements",
+            });
           }
           if(userType === 'teacher'){
             scope.name = scope.user.profile.firstName;
@@ -75,11 +79,11 @@ angular.module("myApp")
                 name:"Roles",
                 url:"roles"
               },{
-                name:"Scripture Mastery",
-                url:"scripture-mastery",
-              },{
                 name:"Devotionals",
                 url:"devotionals",
+              },{
+                name:"Announcements",
+                url:"announcements",
               }
             ];
           }

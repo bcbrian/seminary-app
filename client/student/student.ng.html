@@ -1,4 +1,26 @@
 <div class = "student container text-center">
+  <h2 ng-if="announcements.length > 0">Announcements</h2>
+  <hr/>
+  <div class="row well well-lg" ng-if="announcements.length > 0">
+      <div class="row" ng-repeat="announcement in announcements">
+        <div class="panel panel-primary">
+          <!-- Default panel contents -->
+
+          <div class="panel-body">
+            <div >
+              {{announcement.text}}
+            </div>
+          </div>
+
+          <!-- Table -->
+          <!-- <table class="table">
+            ...
+          </table> -->
+        </div>
+
+        <!-- {{announcement.date}} -->
+      </div>
+  </div>
   <h2>Missed Days</h2>
   <hr/>
   <div class="row well well-lg">

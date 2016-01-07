@@ -21,6 +21,10 @@ angular.module('student').config([
         resolve: {
           "currentUser": ["$meteor", function($meteor){
             return $meteor.requireUser();
+          }],
+          'announcements':['ClassAnnouncementsService',function(ClassAnnouncementsService){
+            console.log('2');
+            return ClassAnnouncementsService.getAnnouncements();
           }]
         }
       })
@@ -29,9 +33,9 @@ angular.module('student').config([
         templateUrl: 'client/student/studentLoading.ng.html',
         controller: 'StudentCtrl',
         resolve: {
-          "currentUser": ["$meteor", function($meteor){
-            return $meteor.requireUser();
-          }]
+            "currentUser": ["$meteor", function($meteor){
+                return $meteor.requireUser();
+            }]
         }
       });
   }]);

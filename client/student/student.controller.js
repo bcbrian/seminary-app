@@ -4,8 +4,10 @@ angular.module('student')
   '$scope',
   '$state',
   '$meteor',
-  function($rootScope, $scope, $state, $meteor){
+  'announcements',
+  function($rootScope, $scope, $state, $meteor, announcements){
     $scope.attendances = $rootScope.attendances;
+    $scope.announcements = announcements;
     $scope.readings = $rootScope.readings;
     $scope.missedDays = 0;
     $scope.fullDays = 0;

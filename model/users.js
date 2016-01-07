@@ -20,7 +20,7 @@ Meteor.methods({
     }
   },
   userUpdateProfile: function (profile, userId) {
-    userId = userId || Meteor.userId()
+    userId = userId || Meteor.userId();
     return Meteor.users.update( userId, {$set : { profile: profile }});
   },
   isClassPresident: function(presidentId, studentId){
